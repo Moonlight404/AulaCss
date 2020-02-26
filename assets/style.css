@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style: none;
+    user-select: none;
+}
+
+:root{
+    --font: #151515;
+    --body: #f5f5f5;
+    --header: #009785;
+}
+
+#app{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body,html{
+    background: var(--body);
+    color: var(--font);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header{
+    width: 100%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: var(--header);
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+header .center{
+    position: relative;
+    margin: 0px auto;
+    max-width: 860px;
+}
+
+header a{
+    color: hsl(174, 43%, 83%);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 4px;
+    position: relative;
+    top: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+header a:hover{
+    color: #fff;
+}
+
+header .ativo{
+    color: #fff;
+}
+
+header .right{
+    position: absolute;
+    float: right;
+    right: 40px;
+    top: 0px;
+}
+
+header .right .font{
+    left: 15px;
+    top: -2px;
+    margin-left: 8px;
+}
+
+header .right .font::before{
+    content: 'A';
+    position: absolute;
+    left: -10px;
+    top: 5px;
+}
+
+main{
+    position: relative;
+    margin: 35px auto;
+    max-width: 855px;
+}
+
+.carrousel{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    white-space: nowrap;
+    margin: 60px auto;
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--header);
+    box-shadow: -1px 1px 2px rgba(0,0,0,.10);
+}
+
+.carrousel .image{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: inline-table;
+    position: absolute;
+    transition: 0.8s;
+}
+
+.carrouselAtivo{
+    left: 0px !important;
+}
+
+.carrousel .arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    background: #f9f9f9a6;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carrousel .arrow:hover{
+    background: #f9f9f9e6;
+}
+
+.carrousel .button_left{
+    left: 10px;
+    float: left;
+}
+
+.carrousel .button_right{
+    right: 10px;
+    float: right;
+}
+
+.carrousel .dots{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background: #f9f9f9a6;
+    top: 90%;
+    left: calc(50% - 35px);
+    transform: translate(-50%);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.40);
+}
+
+.carrousel .dots:hover{
+    background: #f9f9f9e6;
+}
+
+.dotAtivo{
+    background: #f9f9f9e6 !important;
+}
+
+@media screen and (max-width: 800px){
+    header .right{
+        float: left;
+        width: 100%;
+        background: var(--header);
+        top: 2px;
+        left: -8px;
+        position: relative;
+        height: auto;
+        padding: 10px 10px 10px;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<body>
+    <div id="app" :style="{fontSize: `${fontSize}px`}">
+    <header >
+        <div class="center">
+            <a v-for="link in org"
+                :class="{ativo: org.indexOf(link) === myLink}"
+                @click="acessar(org.indexOf(link))"
+                >
+                    {{ link.toUpperCase() }}
+            </a>
+            <div class="right">
+                <a>Entre em contato</a>
+                <a>Trabalhe Conosco</a>
+                <a>Intranet</a>
+                <a class="font" @click="font(0)">+</a>
+                <a class="font" @click="font(1)">-</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <img 
+        src="http://sc.senai.br/themes/custom/fsi/images/senai_logo.png" alt="" class="logo">
+        <div class="carrousel">
+            <div v-for="c in carrouselImage"
+                class="image"
+                :style="{backgroundImage: `url(${c})`, left: carrouselImage.indexOf(c) * 100 + '%' }"
+                :class="{carrouselAtivo: 
+                    carrouselImage.indexOf(c) === imageCarrouselID}">
+            </div>
+            <div @click="ca(0)" class="arrow button_left">
+                    <i class="fas fa-chevron-left"></i>
+            </div>
+            <div @click="ca(1)" class="arrow button_right">
+                    <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="dots" 
+            v-for="t in carrouselImage"
+            :class="{dotAtivo: 
+                carrouselImage.indexOf(t) === imageCarrouselID}"
+                @click="imageCarrouselID = carrouselImage.indexOf(t)"
+                >
+
+            </div>
+        </div>
+    </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
